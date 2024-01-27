@@ -1,7 +1,8 @@
 import streamlit as st
 from neurona import Neuron
 
-st.image("./src/data/neurona.jpg")
+st.set_page_config(page_title="Neurona", layout="wide")
+st.image("./src/data/neurona.jpg",width=800)
 st.title("Simulador de neurona")
 
 index = st.slider("Elige un numero de entradas/pesos que tendrá la neurona", min_value=1, max_value=10)
@@ -31,7 +32,7 @@ s1.subheader("Sesgo")
 sesgo = s1.number_input("Introduce el valor del sesgo", key="sesgo")
 
 s2.subheader("Función de activación")
-func = s2.selectbox("Elige una función de activación",["ReLu","Sigmoid","tanh"])
+func = s2.selectbox("Elige una función de activación",["ReLu","Sigmoid","tanh","binaryS"])
 
 if st.button("Calcular la salida"):
     # Declare the class everytime you push a button
